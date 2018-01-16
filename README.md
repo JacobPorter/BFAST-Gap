@@ -10,6 +10,7 @@ The one functional addition that BFAST-Gap makes is a context sensitive gap pena
 
 The scoring file consists of 14 numbers each on their own line.  The scoring file has the following format.
 
+```
 INT1 -- gap open penalty (negative)
 INT2 -- gap extension penalty (negative)
 INT3 -- match score (positive)
@@ -24,6 +25,7 @@ FLOAT5 -- gap extension function parameter 1
 FLOAT6 -- gap extension function parameter 2
 FLOAT7 -- gap extension function parameter 3
 FLOAT8 -- gap extension function parameter 4
+```
 
 There are four gap penalty functions that can be used, and these are given as integer values in the appropriate fields.  These functions consist of the following.
 
