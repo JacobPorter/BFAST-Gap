@@ -1,0 +1,49 @@
+===============================================================================
+General
+===============================================================================
+
+===============================================================================
+tests
+- update tests for new default parameters
+===============================================================================
+
+===============================================================================
+manual
+- update tests upon release.
+===============================================================================
+
+===============================================================================
+- the merge step could be faster.  Currently, only single values are read in
+one at a time.  We could have a buffer when merging off the disk.
+===============================================================================
+
+
+===============================================================================
+match
+- check the implicit file names against the actual content of the indexes when
+read.
+===============================================================================
+
+===============================================================================
+localalign
+- for constrained gapped local alignment, we can use the ungapped local 
+alignment to get bounds on the constrained local alignment.  Let L-C-R be the
+constrains, where L is the unconstrained left side of the read, C be the 
+constrained middle portion of the read, and R be the unconstrained right portion
+of the read.  We can get bounds on L and R for gapped local alignment by using 
+the L and R values from ungapped local alignment. How much will this buy us?
+===============================================================================
+
+===============================================================================
+postprocess
+- fix pairing from stdin
+===============================================================================
+
+===============================================================================
+bfast.submit.pl
+- what if there are too many files to be merged at the end?
+- if there is an error while submitting, could we call an error-handling routine
+that will try to delete all the jobs?
+- add options for 'samtools index' as well as 'dbamfilter -D'
+- add option for RG field in sam on a per FASTQ basis.
+===============================================================================
