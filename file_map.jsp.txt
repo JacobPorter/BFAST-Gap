@@ -1,5 +1,24 @@
 BLibDefinitions.h -- contains BFAST constants
 
+Project 1 -- context sensitive gap penalty function.  Completed.
+
+Files that may need to be modified for context sensitive gap open penalty
+AlignNTSpace -- does the actual alignments and calls functions in ScoringMatrix
+ScoringMatrix -- defines the gap penalty functions.
+AlignMatrix.c, AlignMatrix.h
+ALign.c
+
+Other files that may need to be modified to postprocess the context sensitive gap penalty.
+RunLocalAlign.c  print out the scoring function
+RunPostProcess.c print out the scoring function   Change the score comparison to a double.
+AlignedReadConvert.c  This file converts aligned reads into the SAM file format.  This file can be modified to print out the score.
+AlignedEntry.c changed the score field from int32_t to double
+
+
+Project 2 -- gapped index creation.  Incomplete.  Tests determined it was not worthwhile.
+
+Feb 18, 2017 -- Tested the gapped index creation.  It appeared to create without any problems.  Tested the matching functionality, but this caused a segmentation fault (core dump), and running process, so I don't think it is implemented.
+
 RGIndex.c -- modified for gapped indexes.  Constructs the index.
 RGIndexLayout.c -- defines the index mask
 
@@ -9,17 +28,3 @@ RunMatch -- runs the matching program
 RGReads.c -- This looks like the file that calls the function that does all of the work in finding the matches: RGReadsFindMatches
 RGIndex.c -- RGIndexGetRangesBothStrands -> RGIndexGetRanges -> RGIndexGetIndex  -> RGIndexGetHashIndexFromRead, RGIndexCompareRead
 Blib.c -- WillGenerateValidKey may need to modify.  Called by RGIndexGetRanges.
-
-Files that may need to be modified for context sensitive gap open penalty
-AlignNTSpace
-ScoringMatrix
-AlignMatrix.c, AlignMatrix.h
-ALign.c
-
-RunLocalAlign.c  print out the scoring function
-RunPostProcess.c print out the scoring function   Change the score comparison to a double.
-AlignedReadConvert.c  This file converts aligned reads into the SAM file format.  This file can be modified to print out the score.
-AlignedEntry.c changed the score field from int32_t to double
-
-Feb 18, 2017 -- Tested the gapped index creation.  It appeared to create without any problems.  Tested the matching functionality, but this caused a segmentation fault (core dump), and running process, so I don't think it is implemented.
-
